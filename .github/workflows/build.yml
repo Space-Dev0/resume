@@ -27,7 +27,8 @@ jobs:
 
       - name: Generate Preview PNG
         run: |
-          convert -density 300 resume.pdf[0] -quality 100 resume.png
+          magick -density 300 resume.pdf[0] -quality 100 resume.png
+          magick resume.png -channel RGB -negate resume.png
 
       - name: Commit Generated Files
         run: |
