@@ -39,7 +39,7 @@ jobs:
       - name: Generate Version Tag
         id: tag
         run: |
-          echo "tag=v$(date +'%Y.%m.%d.%H%M')" >> $GITHUB_OUTPUT
+          echo "tag=v$(date +'%Y.%m.%d')" >> $GITHUB_OUTPUT
 
       - name: Create Release
         uses: softprops/action-gh-release@v3
