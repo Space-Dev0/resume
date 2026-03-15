@@ -1,0 +1,206 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Kanishak Mittal} \\ \vspace{2pt}
+    \small +91 9260914326 $|$ \href{mailto:mekanishak12@gmail.com}{\underline{mekanishak12@gmail.com}} $|$ \href{mailto:cs24b1017@iiitr.ac.in}{\underline{cs24b1017@iiitr.ac.in}} \\ \vspace{2pt}
+    \href{https://linkedin.com/in/kanishak-mittal-417289399}{\underline{linkedin.com/in/kanishak-mittal-417289399}} $|$
+    \href{https://github.com/Space-Dev0}{\underline{github.com/Space-Dev0}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Indian Institute of Information Technology Raichur}{Raichur, Karnataka}
+      {B.Tech in Computer Science and Engineering; \textbf{CGPA: 9.4}}{Aug. 2024 -- May 2028}
+      \resumeItemListStart
+        \vspace{2pt}\resumeItem{\textbf{Relevant Coursework:} Design and Analysis of Algorithms, Computer Architecture and Organization, Probability, Data Warehousing, Database Management Systems, Operating Systems, Compiler Design}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Leadership \& Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Science and Technology Secretary}{Aug. 2025 -- Present}
+      {Indian Institute of Information Technology Raichur}{Raichur, Karnataka}
+      \resumeItemListStart
+        \resumeItem{Spearhead the functioning and coordination of all science and technology clubs across the institute}
+        \resumeItem{Organized and executed competitive programming competitions to foster a coding culture among students}
+        \resumeItem{Lead the organization of a state-level event under the AI Impact Summit 2026, managing logistics and execution}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Core Member, Cybersecurity Club}{Aug. 2024 -- Present}
+      {Indian Institute of Information Technology Raichur}{Raichur, Karnataka}
+      \resumeItemListStart
+        \resumeItem{Actively participate in club activities and contribute to the planning of cybersecurity-focused events and workshops}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects \& Research}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+       {\textbf{Clustering Algorithms Optimization Research} $|$ \emph{C/C++, SIMD, ML}}{Jan. 2025 -- May 2025}
+          \resumeItemListStart
+            \resumeItem{Studied various machine learning clustering algorithms under Dr. Anoop Halder, with a primary focus on DBSCAN}
+            \resumeItem{Optimized clustering algorithms for low-level hardware utilization using SIMD instructions and efficient C/C++ memory paradigms}
+          \resumeItemListEnd
+         
+      \resumeProjectHeading
+          {\textbf{High Capacity Color 2D (HCC2D) QR Code Implementation} $|$ \emph{C/C++}}{Jan. 2025 -- May 2025}
+          \resumeItemListStart
+            \resumeItem{Conceptualized and created an implementation of HCC2D QR codes utilizing different color spectrums}
+            \resumeItem{Successfully increased data density compared to standard black-and-white QR codes using C/C++}
+          \resumeItemListEnd
+      \resumeProjectHeading
+       {\textbf{GigTrust} $|$ \emph{Flutter, Rust, JavaScript, Node.js, MongoDB}}{Aug. 2025 -- Dec. 2025}
+          \resumeItemListStart
+            \resumeItem{Developed a blockchain-based platform for gig workers to ensure fair compensation and trust between employers and employees}
+            \resumeItem{Implemented smart contracts in Rust to freeze funds until mutual agreement is reached on the completed work}
+            \resumeItem{Built a cross-platform mobile application using Flutter with a backend managed by Node.js and MongoDB}
+          \resumeItemListEnd
+         
+      \resumeProjectHeading
+          {\textbf{Laxmi} $|$ \emph{Python, AWS}}{May 2025 -- Jan. 2026}
+          \resumeItemListStart
+            \resumeItem{Built an algorithmic trading bot that executes real-time trades utilizing the RESTful APIs of mTrade}
+            \resumeItem{Designed the system to allow users to program and test their own custom trading strategies}
+            \resumeItem{Deployed and currently maintain the bot infrastructure on Amazon Web Services (AWS)}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Python, Rust, JavaScript, Dart, SQL} \\
+     \textbf{Frameworks}{: Flutter, Node.js} \\
+     \textbf{Developer Tools}{: Git, AWS, Docker, Linux} \\
+     \textbf{Databases}{: MongoDB, PostgreSQL}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
