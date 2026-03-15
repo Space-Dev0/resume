@@ -1,0 +1,50 @@
+name: Build and Release Resume
+
+on:
+  push:
+    paths:
+      - "resume.tex"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full latexmk imagemagick
+
+      - name: Compile Resume
+        run: |
+          latexmk -pdf resume.tex
+
+      - name: Generate Preview PNG
+        run: |
+          convert -density 300 resume.pdf[0] -quality 100 resume.png
+
+      - name: Commit Generated Files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add resume.pdf resume.png
+          git commit -m "Auto build resume"
+          git push || echo "No changes"
+
+      - name: Generate Version Tag
+        id: tag
+        run: |
+          echo "tag=v$(date +'%Y.%m.%d.%H%M')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Resume ${{ steps.tag.outputs.tag }}
+          files: resume.pdf
