@@ -16,19 +16,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-full latexmk imagemagick
-
-      - name: Compile Resume
-        run: |
-          latexmk -pdf resume.tex
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
 
       - name: Generate Preview PNG
         run: |
-          magick -density 300 resume.pdf[0] -quality 100 resume.png
-          magick resume.png -channel RGB -negate resume.png
+          convert -density 300 resume.pdf[0] -quality 100 resume.png
+          convert resume.png -channel RGB -negate resume.png
 
       - name: Commit Generated Files
         run: |
