@@ -23,6 +23,8 @@ jobs:
 
       - name: Generate Preview PNG
         run: |
+          sudo apt-get update
+          sudo apt-get install imagemagick
           convert -density 300 resume.pdf[0] -quality 100 resume.png
           convert resume.png -channel RGB -negate resume.png
 
