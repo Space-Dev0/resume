@@ -64,12 +64,12 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-3pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
@@ -84,7 +84,7 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+    \vspace{2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
@@ -96,7 +96,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
@@ -123,7 +123,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Indian Institute of Information Technology Raichur}{Raichur, Karnataka}
-      {B.Tech in Computer Science and Engineering; \textbf{CGPA: 9.47}}{Aug. 2024 -- May 2028}
+      {B.Tech in Computer Science and Engineering; \textbf{CGPA: 9.2}}{Aug. 2024 -- May 2028}
       \resumeItemListStart
         \vspace{2pt}\resumeItem{\textbf{Relevant Coursework:} Design and Analysis of Algorithms, Computer Architecture and Organization, Probability, Data Warehousing, Database Management Systems, Operating Systems, Compiler Design}
       \resumeItemListEnd
@@ -137,8 +137,18 @@
 
 
 %-----------EXPERIENCE-----------
-\section{Leadership \& Experience}
+\section{Experience \& Leadership}
   \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Summer Research Intern}{May. 2026 -- Jul. 2026}
+      {UbiNet Lab, Indian Institute of Technology Kharagpur}{Kharagpur, India}
+      \resumeItemListStart
+        \vspace{2pt}\resumeItem{\textbf{Dynamic Observability Framework} (Sponsored by Ericsson) $|$ \emph{eBPF, Kubernetes, MicroVMs, C++, Python}}
+        \resumeItem{Engineered a zero-instrumentation observability framework using eBPF (kprobes/tracepoints) to trace distributed transactions and kernel-level latency at near-zero steady-state overhead}
+        \resumeItem{Architected container lifecycle tracking across Kubernetes, Docker, and MicroVMs, using dynamic metadata discovery (CRI runtime, procfs) to resolve ephemeral namespaces, host PIDs, and IPs}
+        \resumeItem{Restructured eBPF map memory layouts to eliminate locked-memory overhead and prevent OOM kills under load}
+      \resumeItemListEnd
 
     \resumeSubheading
       {Science and Technology Secretary}{Aug. 2025 -- Present}
@@ -163,31 +173,31 @@
 \section{Projects \& Research}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-       {\textbf{Clustering Algorithms Optimization Research} $|$ \emph{C/C++, SIMD, ML}}{Jan. 2025 -- May 2025}
+       {\textbf{Muadib: Which Exposure Matters?} $|$ \emph{Python, PyTorch, CUDA, NumPy}}{Oct. 2026 -- Present}
           \resumeItemListStart
-            \resumeItem{Studied various machine learning clustering algorithms under Dr. Anoop Halder, with a primary focus on DBSCAN}
-            \resumeItem{Optimized clustering algorithms for low-level hardware utilization using SIMD instructions and efficient C/C++ memory paradigms}
+            \resumeItem{Quantifying how predicate-, pair-, and rule-level exposure affects compositional generalization in diffusion models}
+            \resumeItem{Built a synthetic scene renderer, Monte Carlo exposure estimator, LP-based exposure design, and a 127+ test suite}
+            \resumeItem{Developed a CUDA diffusion pilot with a custom UNet, predicate-slot cross-attention, and classifier-free guidance}
           \resumeItemListEnd
-         
+
       \resumeProjectHeading
-          {\textbf{High Capacity Color 2D (HCC2D) QR Code Implementation} $|$ \emph{C/C++}}{Jan. 2025 -- May 2025}
+       {\textbf{Goodix 27c6:581a Linux Fingerprint Driver} $|$ \emph{C/C++, Linux Kernel, libfprint, Python}}{Oct. 2026 -- Nov. 2026}
           \resumeItemListStart
-            \resumeItem{Conceptualized and created an implementation of HCC2D QR codes utilizing different color spectrums}
-            \resumeItem{Successfully increased data density compared to standard black-and-white QR codes using C/C++}
+            \resumeItem{Reverse-engineered a proprietary USB fingerprint sensor into a \texttt{libfprint}/\texttt{fprintd} biometric driver for Linux}
+            \resumeItem{Reimplemented the OEM TLS 1.2 handshake over USB bulk endpoints and decoded packed 12-bit frames into native 64$\times$80 images with a separable high-pass filter}
+            \resumeItem{Replaced NBIS/Bozorth3 minutiae matching with a SIGFM SIFT matcher; hardened the stack with SELinux policy fixes}
           \resumeItemListEnd
+
       \resumeProjectHeading
        {\textbf{GigTrust} $|$ \emph{Flutter, Rust, JavaScript, Node.js, MongoDB}}{Aug. 2025 -- Dec. 2025}
           \resumeItemListStart
-            \resumeItem{Developed a blockchain-based platform for gig workers to ensure fair compensation and trust between employers and employees}
-            \resumeItem{Implemented smart contracts in Rust to freeze funds until mutual agreement is reached on the completed work}
-            \resumeItem{Built a cross-platform mobile application using Flutter with a backend managed by Node.js and MongoDB}
+            \resumeItem{Developed a blockchain gig-work platform with Rust smart contracts that freeze funds until mutual agreement}
+            \resumeItem{Built a cross-platform Flutter application with a Node.js and MongoDB backend}
           \resumeItemListEnd
-         
       \resumeProjectHeading
           {\textbf{Laxmi} $|$ \emph{Python, AWS}}{May 2025 -- Jan. 2026}
           \resumeItemListStart
-            \resumeItem{Built an algorithmic trading bot that executes real-time trades utilizing the RESTful APIs of mTrade}
-            \resumeItem{Designed the system to allow users to program and test their own custom trading strategies}
+            \resumeItem{Built an algorithmic trading bot that executes real-time trades via mTrade REST APIs with custom strategies}
             \resumeItem{Deployed and currently maintain the bot infrastructure on Amazon Web Services (AWS)}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
@@ -200,8 +210,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages}{: C/C++, Python, Rust, JavaScript, Dart, SQL} \\
-     \textbf{Frameworks}{: Flutter, Node.js} \\
-     \textbf{Developer Tools}{: Git, AWS, Docker, Linux} \\
+     \textbf{Frameworks \& Tools}{: PyTorch, Flutter, Node.js, Git, AWS, Docker, Kubernetes, eBPF} \\
      \textbf{Databases}{: MongoDB, PostgreSQL}
     }}
  \end{itemize}
