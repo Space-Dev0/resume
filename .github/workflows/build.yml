@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "resume.tex"
+      - ".github/workflows/build.yml"
 
 permissions:
   contents: write
@@ -15,6 +16,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
@@ -24,22 +27,34 @@ jobs:
       - name: Generate Preview PNG
         run: |
           sudo apt-get update
-          sudo apt-get install imagemagick
+          sudo apt-get install -y imagemagick
           convert -density 300 resume.pdf[0] -quality 100 resume.png
           convert resume.png -channel RGB -negate resume.png
 
       - name: Commit Generated Files
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add resume.pdf resume.png
-          git commit -m "Auto build resume"
-          git push || echo "No changes"
+          # If the triggering commit already included updated resume.pdf and resume.png,
+          # skip committing to avoid creating unnecessary bot commits that desynchronize local clones.
+          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
+          if echo "$CHANGED_FILES" | grep -q "resume.pdf"; then
+            echo "resume.pdf was already updated in the triggering commit. Skipping bot commit."
+          else
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add resume.pdf resume.png
+            if git diff --staged --quiet; then
+              echo "No changes in generated artifacts."
+            else
+              git commit -m "Auto build resume [skip ci]"
+              git pull --rebase origin main || true
+              git push origin main
+            fi
+          fi
 
       - name: Generate Version Tag
         id: tag
         run: |
-          echo "tag=v$(date +'%Y.%m.%d')" >> $GITHUB_OUTPUT
+          echo "tag=v$(date +'%Y.%m.%d').${{ github.run_number }}" >> $GITHUB_OUTPUT
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
